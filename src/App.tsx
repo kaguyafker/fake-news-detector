@@ -16,6 +16,8 @@ import Profile from "./pages/Profile";
 import Admin from "./pages/Admin";
 import Activity from "./pages/Activity";
 import VerifyNews from "./pages/VerifyNews";
+import History from "./pages/History";
+import Bookmarks from "./pages/Bookmarks";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,15 +33,17 @@ const App = () => (
             <Layout>
               <Routes>
                 <Route path="/" element={<Landing />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/forgot-password" element={<ForgotPassword />} />
-            <Route path="/verify" element={<VerifyNews />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
+                <Route path="/verify" element={<VerifyNews />} />
                 
                 <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
                 <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
                 <Route path="/admin" element={<ProtectedRoute><Admin /></ProtectedRoute>} />
                 <Route path="/activity" element={<ProtectedRoute><Activity /></ProtectedRoute>} />
+                <Route path="/history" element={<ProtectedRoute><History /></ProtectedRoute>} />
+                <Route path="/bookmarks" element={<ProtectedRoute><Bookmarks /></ProtectedRoute>} />
                 
                 <Route path="*" element={<NotFound />} />
               </Routes>
