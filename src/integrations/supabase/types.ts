@@ -44,6 +44,38 @@ export type Database = {
         }
         Relationships: []
       }
+      bookmarks: {
+        Row: {
+          created_at: string
+          id: string
+          tags: string[] | null
+          user_id: string
+          verification_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          tags?: string[] | null
+          user_id: string
+          verification_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          tags?: string[] | null
+          user_id?: string
+          verification_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "bookmarks_verification_id_fkey"
+            columns: ["verification_id"]
+            isOneToOne: false
+            referencedRelation: "verifications"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       item_tags: {
         Row: {
           item_id: string
@@ -161,6 +193,39 @@ export type Database = {
           id?: string
           role?: Database["public"]["Enums"]["app_role"]
           user_id?: string
+        }
+        Relationships: []
+      }
+      verifications: {
+        Row: {
+          claim: string
+          confidence: number
+          created_at: string
+          id: string
+          reasoning: string | null
+          sources: Json | null
+          user_id: string
+          verdict: string
+        }
+        Insert: {
+          claim: string
+          confidence: number
+          created_at?: string
+          id?: string
+          reasoning?: string | null
+          sources?: Json | null
+          user_id: string
+          verdict: string
+        }
+        Update: {
+          claim?: string
+          confidence?: number
+          created_at?: string
+          id?: string
+          reasoning?: string | null
+          sources?: Json | null
+          user_id?: string
+          verdict?: string
         }
         Relationships: []
       }
