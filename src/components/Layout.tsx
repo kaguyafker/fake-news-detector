@@ -127,7 +127,7 @@ export function Layout({ children }: LayoutProps) {
 
       <footer className="border-t bg-card/80 backdrop-blur-md py-6 mt-12">
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          © 2025 Fake News Detection. Built with Lovable Cloud.
+          © 2025 Fake News Detection.
         </div>
       </footer>
     </div>
